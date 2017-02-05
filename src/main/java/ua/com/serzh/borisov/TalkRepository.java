@@ -1,4 +1,4 @@
-package ua.com.serzh;
+package ua.com.serzh.borisov;
 
 import org.springframework.data.repository.RepositoryDefinition;
 

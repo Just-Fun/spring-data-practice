@@ -6,4 +6,4 @@ appender("STDOUT", ConsoleAppender) {
     }
 }
 root(ERROR, ["STDOUT"])
-logger("conference", INFO)
+logger("borisov", INFO)

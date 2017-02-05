@@ -1,4 +1,4 @@
-package ua.com.serzh;
+package ua.com.serzh.borisov;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -16,9 +16,9 @@ public class ServiceSpeker {
     public void someCheck() {
         long count = repository.count();
         Iterable<Speaker> speakers = repository.findAll(new Sort(Sort.Direction.DESC, "name"));
-        repository.findByName("Angelina");
-        repository.findPleaseByNameLike("%Angelina%");
-        repository.findPleaseByNameEndingWith("na");
-        repository.findByTalksTitleLike(".*SomeTopic.*");
+//        repository.findByName("Angelina");
+//        repository.findPleaseByNameLike("%Angelina%");
+//        repository.findPleaseByNameEndingWith("na");
+//        repository.findByTalksTitleLike(".*SomeTopic.*");
     }
 }

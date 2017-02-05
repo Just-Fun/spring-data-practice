@@ -1,12 +1,12 @@
-package ua.com.serzh;
+package ua.com.serzh.borisov;
 
+import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
-
-import java.net.UnknownHostException;
 
 /**
  * Created by Serzh on 2/5/17.
@@ -15,13 +15,16 @@ import java.net.UnknownHostException;
 //@EnableJpaRepositories
 @EnableMongoRepositories
 public class ApplicationConfiguration {
+
     @Bean
-    MongoClient mongoClient() throws UnknownHostException {
+    public Mongo getMongo() throws Exception{
         return new MongoClient();
     }
 
     @Bean
-    MongoTemplate mongoTemplate() throws UnknownHostException {
-        return new MongoTemplate(mongoClient(), "mongo");
+    @Autowired
+    public MongoTemplate mongoTemplate(Mongo m) throws Exception{
+        MongoTemplate mongoTemplate = new MongoTemplate(m, "mongoTemplate");
+        return mongoTemplate;
     }
 }
